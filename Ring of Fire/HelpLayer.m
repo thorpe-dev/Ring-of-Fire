@@ -39,9 +39,26 @@
         helpImage.scale = 0.5;
         
         [self addChild:helpImage];
+        self.isTouchEnabled = YES;
 	}
 	return self;
 }
+
+-(void) registerWithTouchDispatcher
+{
+	[[[CCDirector sharedDirector] touchDispatcher] addTargetedDelegate:self priority:0 swallowsTouches:YES];
+}
+
+- (BOOL)ccTouchBegan:(UITouch *)touch withEvent:(UIEvent *)event
+{
+    return YES;
+}
+
+-(void)ccTouchEnded:(UITouch *)touch withEvent:(UIEvent *)event
+{
+    [self removeFromParentAndCleanup:YES];
+}
+
 
 
 @end
