@@ -9,7 +9,7 @@
 
 // Import the interfaces
 #import "GameLayer.h"
-#import "Background.h"
+#import "HelpLayer.h"
 #import "CCTouchDispatcher.h"
 
 // Needed to obtain the Navigation Controller
@@ -42,11 +42,17 @@
 	// always call "super" init
 	// Apple recommends to re-assign "self" with the "super's" return value
 	if( (self=[super init]) ) {
+        
+        size = [[CCDirector sharedDirector] winSize];        
+        settings = [CCSprite spriteWithFile:@"Settings.png"];
+        settings.position = ccp(size.width*0.95,size.height*0.075);
+        [settings setScale:0.3];
+        
+        [self addChild:settings];
 
         [self createCardArray];
         cardInCenter = NO;
         cardNumber = [NSNumber numberWithInt:-1];
-        
         self.isTouchEnabled = YES;
 	}
 	return self;
@@ -61,7 +67,6 @@
     // Get a card by generating a random number between 0 and length(array)
     // then removing that number from the array
     for (int i = 0; i < CARD_COUNT; i++) {
-
         [cardArray addObject:[NSNumber numberWithInt:i]];
         [cardSprites addObject:[self createCard:i]];
     }
@@ -84,8 +89,6 @@
 {
     Card *card = [Card spriteWithFile:@"CardBack.png"];
     
-    CGSize size = [[CCDirector sharedDirector] winSize];
-    
     CGFloat angle = 360.0*(CGFloat)x/(CGFloat)CARD_COUNT;
     
     CGFloat xcoord = 300 * sinf(angle);
@@ -106,22 +109,24 @@
 	[[[CCDirector sharedDirector] touchDispatcher] addTargetedDelegate:self priority:0 swallowsTouches:YES];
 }
 
-- (BOOL)ccTouchBegan:(UITouch *)touch withEvent:(UIEvent *)event {
+- (BOOL)ccTouchBegan:(UITouch *)touch withEvent:(UIEvent *)event
+{
     return YES;
 }
 
-- (void)selectCard:(Card*)cardTouched {
+- (void)selectCard:(Card*)cardTouched
+{
     cardInCenter = YES;
     centerCard = cardTouched;
     [cardTouched toggleCentral];
     
     // send the card to the center
-    CGSize size = [[CCDirector sharedDirector] winSize];
+    [self reorderChild:centerCard z:NSIntegerMax];
     
-    id moveAction = [CCMoveTo actionWithDuration:1 position:ccp(size.width/2, size.height/2)];
-    id sizeAction = [CCScaleTo actionWithDuration:1 scale:0.6];
-    id rotateAction = [CCRotateBy actionWithDuration:1 angle:-cardTouched.rotation];
-    id cameraAction = [CCOrbitCamera actionWithDuration:1 radius:1 deltaRadius:0 angleZ:0 deltaAngleZ:180 angleX:0 deltaAngleX:0];
+    id moveAction = [CCMoveTo actionWithDuration:0.75 position:ccp(size.width/2, size.height/2)];
+    id sizeAction = [CCScaleTo actionWithDuration:0.75 scale:1];
+    id rotateAction = [CCRotateBy actionWithDuration:0.75 angle:-cardTouched.rotation];
+    id cameraAction = [CCOrbitCamera actionWithDuration:0.75 radius:1 deltaRadius:0 angleZ:0 deltaAngleZ:360 angleX:0 deltaAngleX:0];
     id textureAction = [CCCallFunc actionWithTarget:self selector:@selector(updateTexture)];
     
     [cardTouched runAction:moveAction];
@@ -130,24 +135,26 @@
     [cardTouched runAction:[CCSequence actions:cameraAction,textureAction,nil]];
 }
 
--(void)ccTouchEnded:(UITouch *)touch withEvent:(UIEvent *)event {
+-(void)ccTouchEnded:(UITouch *)touch withEvent:(UIEvent *)event
+{
 	CGPoint location = [self convertTouchToNodeSpace: touch];
+    
+    if (CGRectContainsPoint(settings.boundingBox, location)) {
+        [self addChild:[HelpLayer node]];
+        return;
+    }
 
     Card *cardTouched = [self getCardFromPoint:location];
     
     // If a card was touched
     if (cardTouched != NULL) {
-        NSLog(@"card touched");
-        
         // If its the card in the center
         if ([cardTouched central]) {
             [self dismissCard:cardTouched];
         }
         // else if its in the ring and there is no card in the middle
         else if (!cardInCenter) {
-            NSLog(@"not central");
             [self selectCard:cardTouched];
-            
         }
         
         // Do nothing
@@ -156,7 +163,9 @@
 
 -(void)updateTexture
 {
-    CCTexture2D* tex = [[CCTextureCache sharedTextureCache] addImage:@"Card1.jpg"];
+    cardNumber = [cardArray objectAtIndex:0];
+    int num = (cardNumber.intValue % 13) + 1;
+    CCTexture2D* tex = [[CCTextureCache sharedTextureCache] addImage:[NSString stringWithFormat:@"%d.png",num]];
     [centerCard setTexture: tex];
 }
 

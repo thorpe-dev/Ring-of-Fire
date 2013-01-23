@@ -50,14 +50,6 @@
         [label setScale: 0.2];
         
         [self addChild:label];
-        
-        CCSprite *settings = [CCSprite spriteWithFile:@"Settings.png"];
-        settings.position = ccp(size.width*0.95,size.height*0.075);
-        [settings setScale:0.3];
-        
-        [self addChild:settings];
-        
-        
         [self addChild:[GameLayer node]];
         
     }

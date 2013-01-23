@@ -14,6 +14,8 @@
 
 @interface GameLayer : CCLayer
 {
+    CCSprite *settings;
+    CGSize size;
     NSMutableArray *cardArray;
     NSMutableArray *cardSprites;
     NSNumber *cardNumber;
