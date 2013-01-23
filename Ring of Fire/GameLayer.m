@@ -58,8 +58,8 @@
     cardSprites = [NSMutableArray new];
     
     // Create the range of numbers of 0 to 51
-    // Get a card by generating a random number between 0 and length(array) then removing that number
-    // from the array
+    // Get a card by generating a random number between 0 and length(array)
+    // then removing that number from the array
     for (int i = 0; i < CARD_COUNT; i++) {
 
         [cardArray addObject:[NSNumber numberWithInt:i]];
@@ -110,6 +110,26 @@
     return YES;
 }
 
+- (void)selectCard:(Card*)cardTouched {
+    cardInCenter = YES;
+    centerCard = cardTouched;
+    [cardTouched toggleCentral];
+    
+    // send the card to the center
+    CGSize size = [[CCDirector sharedDirector] winSize];
+    
+    id moveAction = [CCMoveTo actionWithDuration:1 position:ccp(size.width/2, size.height/2)];
+    id sizeAction = [CCScaleTo actionWithDuration:1 scale:0.6];
+    id rotateAction = [CCRotateBy actionWithDuration:1 angle:-cardTouched.rotation];
+    id cameraAction = [CCOrbitCamera actionWithDuration:1 radius:1 deltaRadius:0 angleZ:0 deltaAngleZ:180 angleX:0 deltaAngleX:0];
+    id textureAction = [CCCallFunc actionWithTarget:self selector:@selector(updateTexture)];
+    
+    [cardTouched runAction:moveAction];
+    [cardTouched runAction:rotateAction];
+    [cardTouched runAction:sizeAction];
+    [cardTouched runAction:[CCSequence actions:cameraAction,textureAction,nil]];
+}
+
 -(void)ccTouchEnded:(UITouch *)touch withEvent:(UIEvent *)event {
 	CGPoint location = [self convertTouchToNodeSpace: touch];
 
@@ -126,23 +146,7 @@
         // else if its in the ring and there is no card in the middle
         else if (!cardInCenter) {
             NSLog(@"not central");
-            cardInCenter = YES;
-            centerCard = cardTouched;
-            [cardTouched toggleCentral];
-            
-            // send the card to the center
-            CGSize size = [[CCDirector sharedDirector] winSize];
-
-            id moveAction = [CCMoveTo actionWithDuration:1 position:ccp(size.width/2, size.height/2)];
-            id sizeAction = [CCScaleTo actionWithDuration:1 scale:0.6];
-            id rotateAction = [CCRotateBy actionWithDuration:1 angle:-cardTouched.rotation];
-            id cameraAction = [CCOrbitCamera actionWithDuration:1 radius:1 deltaRadius:0 angleZ:0 deltaAngleZ:180 angleX:0 deltaAngleX:0];
-            id textureAction = [CCCallFunc actionWithTarget:self selector:@selector(updateTexture)];
-            
-            [cardTouched runAction:moveAction];
-            [cardTouched runAction:rotateAction];
-            [cardTouched runAction:sizeAction];
-            [cardTouched runAction:[CCSequence actions:cameraAction,textureAction,nil]];
+            [self selectCard:cardTouched];
             
         }
         
