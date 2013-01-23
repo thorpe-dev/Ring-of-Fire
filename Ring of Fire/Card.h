@@ -13,9 +13,13 @@
 {
     @private
     BOOL central;
+    BOOL clicked;
 }
 
 -(BOOL)central;
 -(void)toggleCentral;
+-(BOOL)clicked;
+-(void)toggleClicked;
+
 
 @end

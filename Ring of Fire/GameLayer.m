@@ -10,7 +10,6 @@
 // Import the interfaces
 #import "GameLayer.h"
 #import "Background.h"
-#import "Card.h"
 #import "CCTouchDispatcher.h"
 
 // Needed to obtain the Navigation Controller
@@ -45,6 +44,8 @@
 	if( (self=[super init]) ) {
 
         [self createCardArray];
+        cardInCenter = NO;
+        cardNumber = [NSNumber numberWithInt:-1];
         
         self.isTouchEnabled = YES;
 	}
@@ -61,8 +62,21 @@
     // from the array
     for (int i = 0; i < CARD_COUNT; i++) {
 
-        [cardArray addObject:[NSDecimalNumber numberWithInt:i]];
+        [cardArray addObject:[NSNumber numberWithInt:i]];
         [cardSprites addObject:[self createCard:i]];
+    }
+    
+    [self shuffle];
+}
+
+- (void)shuffle
+{
+    NSUInteger count = [cardArray count];
+    for (NSUInteger i = 0; i < count; ++i) {
+        // Select a random element between i and end of array to swap with.
+        NSInteger nElements = count - i;
+        NSInteger n = (arc4random() % nElements) + i;
+        [cardArray exchangeObjectAtIndex:i withObjectAtIndex:n];
     }
 }
 
@@ -101,22 +115,53 @@
 
     Card *cardTouched = [self getCardFromPoint:location];
     
+    // If a card was touched
     if (cardTouched != NULL) {
         NSLog(@"card touched");
         
+        // If its the card in the center
         if ([cardTouched central]) {
-            [self popupCard:cardTouched];
-        } else {
-            CGSize size = [[CCDirector sharedDirector] winSize];
-            cardTouched.position = ccp(size.width/2, size.height/2);
-            [cardTouched toggleCentral];
+            [self dismissCard:cardTouched];
         }
+        // else if its in the ring and there is no card in the middle
+        else if (!cardInCenter) {
+            NSLog(@"not central");
+            cardInCenter = YES;
+            centerCard = cardTouched;
+            [cardTouched toggleCentral];
+            
+            // send the card to the center
+            CGSize size = [[CCDirector sharedDirector] winSize];
+
+            id moveAction = [CCMoveTo actionWithDuration:1 position:ccp(size.width/2, size.height/2)];
+            id sizeAction = [CCScaleTo actionWithDuration:1 scale:0.6];
+            id rotateAction = [CCRotateBy actionWithDuration:1 angle:-cardTouched.rotation];
+            id cameraAction = [CCOrbitCamera actionWithDuration:1 radius:1 deltaRadius:0 angleZ:0 deltaAngleZ:180 angleX:0 deltaAngleX:0];
+            id textureAction = [CCCallFunc actionWithTarget:self selector:@selector(updateTexture)];
+            
+            [cardTouched runAction:moveAction];
+            [cardTouched runAction:rotateAction];
+            [cardTouched runAction:sizeAction];
+            [cardTouched runAction:[CCSequence actions:cameraAction,textureAction,nil]];
+            
+        }
+        
+        // Do nothing
     }
 }
 
--(void)popupCard:(Card*)cardTouched
+-(void)updateTexture
 {
-    cardTouched.scale *= 2;
+    CCTexture2D* tex = [[CCTextureCache sharedTextureCache] addImage:@"Card1.jpg"];
+    [centerCard setTexture: tex];
+}
+
+-(void)dismissCard:(Card*)cardTouched
+{
+    cardInCenter = NO;
+    [cardSprites removeObject:cardTouched];
+    [cardArray removeObject:cardNumber];    
+    [cardTouched removeFromParentAndCleanup:YES];
 }
 
 -(Card*)getCardFromPoint:(CGPoint)point
@@ -131,14 +176,8 @@
     return retCard;
 }
 
-// on "dealloc" you need to release all your retained objects
 - (void) dealloc
 {
-	// in case you have something to dealloc, do it in this method
-	// in this particular example nothing needs to be released.
-	// cocos2d will automatically release all the children (Label)
-	
-	// don't forget to call "super dealloc"
 	[super dealloc];
 }
 

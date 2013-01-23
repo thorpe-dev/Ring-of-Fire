@@ -15,6 +15,7 @@
 {
     if (self = [super init]) {
         central = NO;
+        clicked = NO;
     }
     
     return self;
@@ -22,12 +23,22 @@
 
 -(BOOL)central
 {
-    return self->central;
+    return central;
 }
 
 -(void)toggleCentral
 {
-    self->central = !self->central;
+    central = !central;
+}
+
+-(BOOL)clicked
+{
+    return clicked;
+}
+
+-(void)toggleClicked
+{
+    clicked = !clicked;
 }
 
 @end

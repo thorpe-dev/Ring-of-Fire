@@ -9,17 +9,20 @@
 
 #import <GameKit/GameKit.h>
 
-// When you import this file, you import all the cocos2d classes
 #import "cocos2d.h"
+#import "Card.h"
 
-// HelloWorldLayer
 @interface GameLayer : CCLayer
 {
     NSMutableArray *cardArray;
     NSMutableArray *cardSprites;
+    NSNumber *cardNumber;
+    Card *centerCard;
+    
+    BOOL cardInCenter;
 }
 
-// returns a CCScene that contains the HelloWorldLayer as the only child
+// returns a CCScene as the only child
 +(CCScene *) scene;
 
 @end
