@@ -189,9 +189,4 @@
     return retCard;
 }
 
-- (void) dealloc
-{
-	[super dealloc];
-}
-
 @end
