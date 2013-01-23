@@ -134,12 +134,26 @@
 		7BBAB2CC16AE248300D7464E /* GameLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BBAB2CB16AE248300D7464E /* GameLayer.m */; };
 		7BBAB2CF16AE248300D7464E /* IntroLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BBAB2CE16AE248300D7464E /* IntroLayer.m */; };
 		7BBAB2D716AF1EFA00D7464E /* Background.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BBAB2D616AF1EFA00D7464E /* Background.m */; };
-		7BBAB2D916AF221B00D7464E /* WoodBackground.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 7BBAB2D816AF221B00D7464E /* WoodBackground.jpg */; };
 		7BBAB2DC16AF24C000D7464E /* Logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 7BBAB2DA16AF24C000D7464E /* Logo.png */; };
 		7BBAB2DD16AF24C000D7464E /* CardBack.png in Resources */ = {isa = PBXBuildFile; fileRef = 7BBAB2DB16AF24C000D7464E /* CardBack.png */; };
 		7BBAB2E116AF295B00D7464E /* Settings.png in Resources */ = {isa = PBXBuildFile; fileRef = 7BBAB2E016AF295B00D7464E /* Settings.png */; };
 		7BBAB2E516AF5D1900D7464E /* Card.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BBAB2E416AF5D1900D7464E /* Card.m */; };
 		7BBAB2E716AF6EFB00D7464E /* Card1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 7BBAB2E616AF6EFB00D7464E /* Card1.jpg */; };
+		7BBAB2EA16B0501D00D7464E /* HelpLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BBAB2E916B0501D00D7464E /* HelpLayer.m */; };
+		7BBAB2F916B0660200D7464E /* 1.png in Resources */ = {isa = PBXBuildFile; fileRef = 7BBAB2EC16B0660200D7464E /* 1.png */; };
+		7BBAB2FA16B0660200D7464E /* 10.png in Resources */ = {isa = PBXBuildFile; fileRef = 7BBAB2ED16B0660200D7464E /* 10.png */; };
+		7BBAB2FB16B0660200D7464E /* 11.png in Resources */ = {isa = PBXBuildFile; fileRef = 7BBAB2EE16B0660200D7464E /* 11.png */; };
+		7BBAB2FC16B0660200D7464E /* 12.png in Resources */ = {isa = PBXBuildFile; fileRef = 7BBAB2EF16B0660200D7464E /* 12.png */; };
+		7BBAB2FD16B0660200D7464E /* 13.png in Resources */ = {isa = PBXBuildFile; fileRef = 7BBAB2F016B0660200D7464E /* 13.png */; };
+		7BBAB2FE16B0660200D7464E /* 2.png in Resources */ = {isa = PBXBuildFile; fileRef = 7BBAB2F116B0660200D7464E /* 2.png */; };
+		7BBAB2FF16B0660200D7464E /* 3.png in Resources */ = {isa = PBXBuildFile; fileRef = 7BBAB2F216B0660200D7464E /* 3.png */; };
+		7BBAB30016B0660200D7464E /* 4.png in Resources */ = {isa = PBXBuildFile; fileRef = 7BBAB2F316B0660200D7464E /* 4.png */; };
+		7BBAB30116B0660200D7464E /* 5.png in Resources */ = {isa = PBXBuildFile; fileRef = 7BBAB2F416B0660200D7464E /* 5.png */; };
+		7BBAB30216B0660200D7464E /* 6.png in Resources */ = {isa = PBXBuildFile; fileRef = 7BBAB2F516B0660200D7464E /* 6.png */; };
+		7BBAB30316B0660200D7464E /* 7.png in Resources */ = {isa = PBXBuildFile; fileRef = 7BBAB2F616B0660200D7464E /* 7.png */; };
+		7BBAB30416B0660200D7464E /* 8.png in Resources */ = {isa = PBXBuildFile; fileRef = 7BBAB2F716B0660200D7464E /* 8.png */; };
+		7BBAB30516B0660200D7464E /* 9.png in Resources */ = {isa = PBXBuildFile; fileRef = 7BBAB2F816B0660200D7464E /* 9.png */; };
+		7BBAB30716B0689400D7464E /* Default-Landscape~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 7BBAB30616B0689400D7464E /* Default-Landscape~ipad.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -407,13 +421,28 @@
 		7BBAB2CE16AE248300D7464E /* IntroLayer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IntroLayer.m; sourceTree = "<group>"; };
 		7BBAB2D516AF1EFA00D7464E /* Background.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Background.h; sourceTree = "<group>"; };
 		7BBAB2D616AF1EFA00D7464E /* Background.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Background.m; sourceTree = "<group>"; };
-		7BBAB2D816AF221B00D7464E /* WoodBackground.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = WoodBackground.jpg; path = Resources/WoodBackground.jpg; sourceTree = "<group>"; };
 		7BBAB2DA16AF24C000D7464E /* Logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Logo.png; path = Resources/Logo.png; sourceTree = "<group>"; };
 		7BBAB2DB16AF24C000D7464E /* CardBack.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = CardBack.png; path = Resources/CardBack.png; sourceTree = "<group>"; };
 		7BBAB2E016AF295B00D7464E /* Settings.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Settings.png; path = Resources/Settings.png; sourceTree = "<group>"; };
 		7BBAB2E316AF5D1900D7464E /* Card.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Card.h; sourceTree = "<group>"; };
 		7BBAB2E416AF5D1900D7464E /* Card.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Card.m; sourceTree = "<group>"; };
 		7BBAB2E616AF6EFB00D7464E /* Card1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = Card1.jpg; path = Resources/Card1.jpg; sourceTree = "<group>"; };
+		7BBAB2E816B0501D00D7464E /* HelpLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HelpLayer.h; sourceTree = "<group>"; };
+		7BBAB2E916B0501D00D7464E /* HelpLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HelpLayer.m; sourceTree = "<group>"; };
+		7BBAB2EC16B0660200D7464E /* 1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 1.png; path = Resources/Cards/1.png; sourceTree = "<group>"; };
+		7BBAB2ED16B0660200D7464E /* 10.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 10.png; path = Resources/Cards/10.png; sourceTree = "<group>"; };
+		7BBAB2EE16B0660200D7464E /* 11.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 11.png; path = Resources/Cards/11.png; sourceTree = "<group>"; };
+		7BBAB2EF16B0660200D7464E /* 12.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 12.png; path = Resources/Cards/12.png; sourceTree = "<group>"; };
+		7BBAB2F016B0660200D7464E /* 13.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 13.png; path = Resources/Cards/13.png; sourceTree = "<group>"; };
+		7BBAB2F116B0660200D7464E /* 2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 2.png; path = Resources/Cards/2.png; sourceTree = "<group>"; };
+		7BBAB2F216B0660200D7464E /* 3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 3.png; path = Resources/Cards/3.png; sourceTree = "<group>"; };
+		7BBAB2F316B0660200D7464E /* 4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 4.png; path = Resources/Cards/4.png; sourceTree = "<group>"; };
+		7BBAB2F416B0660200D7464E /* 5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 5.png; path = Resources/Cards/5.png; sourceTree = "<group>"; };
+		7BBAB2F516B0660200D7464E /* 6.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 6.png; path = Resources/Cards/6.png; sourceTree = "<group>"; };
+		7BBAB2F616B0660200D7464E /* 7.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 7.png; path = Resources/Cards/7.png; sourceTree = "<group>"; };
+		7BBAB2F716B0660200D7464E /* 8.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 8.png; path = Resources/Cards/8.png; sourceTree = "<group>"; };
+		7BBAB2F816B0660200D7464E /* 9.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 9.png; path = Resources/Cards/9.png; sourceTree = "<group>"; };
+		7BBAB30616B0689400D7464E /* Default-Landscape~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-Landscape~ipad.png"; path = "Resources/Default-Landscape~ipad.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -476,6 +505,8 @@
 				7BBAB2C816AE248300D7464E /* AppDelegate.m */,
 				7BBAB2CA16AE248300D7464E /* GameLayer.h */,
 				7BBAB2CB16AE248300D7464E /* GameLayer.m */,
+				7BBAB2E816B0501D00D7464E /* HelpLayer.h */,
+				7BBAB2E916B0501D00D7464E /* HelpLayer.m */,
 				7BBAB2E316AF5D1900D7464E /* Card.h */,
 				7BBAB2E416AF5D1900D7464E /* Card.m */,
 				7BBAB2D516AF1EFA00D7464E /* Background.h */,
@@ -492,12 +523,24 @@
 		7BBAB15016AE248200D7464E /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				7BBAB30616B0689400D7464E /* Default-Landscape~ipad.png */,
+				7BBAB2EC16B0660200D7464E /* 1.png */,
+				7BBAB2ED16B0660200D7464E /* 10.png */,
+				7BBAB2EE16B0660200D7464E /* 11.png */,
+				7BBAB2EF16B0660200D7464E /* 12.png */,
+				7BBAB2F016B0660200D7464E /* 13.png */,
+				7BBAB2F116B0660200D7464E /* 2.png */,
+				7BBAB2F216B0660200D7464E /* 3.png */,
+				7BBAB2F316B0660200D7464E /* 4.png */,
+				7BBAB2F416B0660200D7464E /* 5.png */,
+				7BBAB2F516B0660200D7464E /* 6.png */,
+				7BBAB2F616B0660200D7464E /* 7.png */,
+				7BBAB2F716B0660200D7464E /* 8.png */,
+				7BBAB2F816B0660200D7464E /* 9.png */,
 				7BBAB2E616AF6EFB00D7464E /* Card1.jpg */,
-				7BBAB2E216AF3FD900D7464E /* Cards */,
 				7BBAB2E016AF295B00D7464E /* Settings.png */,
 				7BBAB2DA16AF24C000D7464E /* Logo.png */,
 				7BBAB2DB16AF24C000D7464E /* CardBack.png */,
-				7BBAB2D816AF221B00D7464E /* WoodBackground.jpg */,
 				7BBAB15116AE248200D7464E /* Default.png */,
 				7BBAB15316AE248200D7464E /* Background.png */,
 				7BBAB15516AE248200D7464E /* fps_images.png */,
@@ -858,13 +901,6 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		7BBAB2E216AF3FD900D7464E /* Cards */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Cards;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -928,11 +964,24 @@
 				7BBAB16616AE248200D7464E /* Icon@2x.png in Resources */,
 				7BBAB16916AE248200D7464E /* iTunesArtwork in Resources */,
 				7BBAB2A716AE248300D7464E /* ChangeLog in Resources */,
-				7BBAB2D916AF221B00D7464E /* WoodBackground.jpg in Resources */,
 				7BBAB2DC16AF24C000D7464E /* Logo.png in Resources */,
 				7BBAB2DD16AF24C000D7464E /* CardBack.png in Resources */,
 				7BBAB2E116AF295B00D7464E /* Settings.png in Resources */,
 				7BBAB2E716AF6EFB00D7464E /* Card1.jpg in Resources */,
+				7BBAB2F916B0660200D7464E /* 1.png in Resources */,
+				7BBAB2FA16B0660200D7464E /* 10.png in Resources */,
+				7BBAB2FB16B0660200D7464E /* 11.png in Resources */,
+				7BBAB2FC16B0660200D7464E /* 12.png in Resources */,
+				7BBAB2FD16B0660200D7464E /* 13.png in Resources */,
+				7BBAB2FE16B0660200D7464E /* 2.png in Resources */,
+				7BBAB2FF16B0660200D7464E /* 3.png in Resources */,
+				7BBAB30016B0660200D7464E /* 4.png in Resources */,
+				7BBAB30116B0660200D7464E /* 5.png in Resources */,
+				7BBAB30216B0660200D7464E /* 6.png in Resources */,
+				7BBAB30316B0660200D7464E /* 7.png in Resources */,
+				7BBAB30416B0660200D7464E /* 8.png in Resources */,
+				7BBAB30516B0660200D7464E /* 9.png in Resources */,
+				7BBAB30716B0689400D7464E /* Default-Landscape~ipad.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1049,6 +1098,7 @@
 				7BBAB2CF16AE248300D7464E /* IntroLayer.m in Sources */,
 				7BBAB2D716AF1EFA00D7464E /* Background.m in Sources */,
 				7BBAB2E516AF5D1900D7464E /* Card.m in Sources */,
+				7BBAB2EA16B0501D00D7464E /* HelpLayer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1107,6 +1157,7 @@
 					"\"Ring of Fire/libs/kazmath/include\"",
 				);
 				INFOPLIST_FILE = "Ring of Fire/Resources/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				OTHER_LDFLAGS = (
 					"-lz",
 					"-ObjC",
@@ -1127,6 +1178,7 @@
 					"\"Ring of Fire/libs/kazmath/include\"",
 				);
 				INFOPLIST_FILE = "Ring of Fire/Resources/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				OTHER_LDFLAGS = (
 					"-lz",
 					"-ObjC",
