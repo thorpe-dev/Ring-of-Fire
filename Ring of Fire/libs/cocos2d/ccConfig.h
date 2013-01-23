@@ -45,7 +45,7 @@
  @since v2.0.0
  */
 #ifndef CC_ENABLE_GL_STATE_CACHE
-#define CC_ENABLE_GL_STATE_CACHE 0
+#define CC_ENABLE_GL_STATE_CACHE 1
 #endif
 
 /** @def CC_ENABLE_DEPRECATED
@@ -57,7 +57,7 @@
  @since v2.0.0
  */
 #ifndef CC_ENABLE_DEPRECATED
-#define CC_ENABLE_DEPRECATED 1
+#define CC_ENABLE_DEPRECATED 0
 #endif
 
 
