@@ -14,31 +14,9 @@
 -(id)init
 {
     if (self = [super init]) {
-        central = NO;
-        clicked = NO;
     }
     
     return self;
-}
-
--(BOOL)central
-{
-    return central;
-}
-
--(void)toggleCentral
-{
-    central = !central;
-}
-
--(BOOL)clicked
-{
-    return clicked;
-}
-
--(void)toggleClicked
-{
-    clicked = !clicked;
 }
 
 @end

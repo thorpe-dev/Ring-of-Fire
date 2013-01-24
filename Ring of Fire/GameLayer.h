@@ -21,10 +21,11 @@
     NSNumber *cardNumber;
     Card *centerCard;
     
-    BOOL cardInCenter;
+    BOOL ringBroken;
 }
 
 // returns a CCScene as the only child
 +(CCScene *) scene;
+-(void)resetGame;
 
 @end

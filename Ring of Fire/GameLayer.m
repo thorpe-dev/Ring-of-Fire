@@ -16,6 +16,7 @@
 #import "AppDelegate.h"
 
 #define CARD_COUNT 52
+#define RINGSIZE 300
 
 // HelloWorldLayer implementation
 @implementation GameLayer
@@ -51,7 +52,8 @@
         [self addChild:settings];
 
         [self createCardArray];
-        cardInCenter = NO;
+        ringBroken = NO;
+        centerCard = NULL;
         cardNumber = [NSNumber numberWithInt:-1];
         self.isTouchEnabled = YES;
 	}
@@ -91,16 +93,16 @@
     
     CGFloat angle = 360.0*(CGFloat)x/(CGFloat)CARD_COUNT;
     
-    CGFloat xcoord = 300 * sinf(angle);
-    CGFloat ycoord = 300 * cosf(angle);
+    CGFloat xcoord = RINGSIZE * sinf(angle);
+    CGFloat ycoord = RINGSIZE * cosf(angle);
     
     CGFloat rotation = 360.0*(float)random()/RAND_MAX;
     
     card.position = ccp(size.width/2 + xcoord, size.height/2 + ycoord);
+
     [card setScale:0.3];
     [card setRotation:rotation];
     [self addChild:card];
-    
     return card;
 }
 
@@ -116,26 +118,53 @@
 
 - (void)selectCard:(Card*)cardTouched
 {
-    cardInCenter = YES;
     centerCard = cardTouched;
-    [cardTouched toggleCentral];
     
-    // send the card to the center
+    // send the card to the front
     [self reorderChild:centerCard z:NSIntegerMax];
+
+    // Disable touch
+    self.isTouchEnabled = NO;
     
+    // Move into the center
     id moveAction = [CCMoveTo actionWithDuration:0.75 position:ccp(size.width/2, size.height/2)];
+    // Make twice as large
     id sizeAction = [CCScaleTo actionWithDuration:0.75 scale:1];
-    id rotateAction = [CCRotateBy actionWithDuration:0.75 angle:-cardTouched.rotation];
+    // Reset rotation, in 0.2 seconds
+    // Makes it look a lot less weird than in sync with the rest
+    id rotateAction = [CCRotateBy actionWithDuration:0.2 angle:-cardTouched.rotation];
+    // Update the texture - half the time needed by the camera so as the rotation flips over,
+    // we update the texture (and check for the ring being broken)
+    id delay = [CCDelayTime actionWithDuration:(0.75/2)];
     id cameraAction = [CCOrbitCamera actionWithDuration:0.75 radius:1 deltaRadius:0 angleZ:0 deltaAngleZ:360 angleX:0 deltaAngleX:0];
     id textureAction = [CCCallFunc actionWithTarget:self selector:@selector(updateTexture)];
+    // Re-enable touch
     CCCallBlock* animationComplete = [CCCallBlock actionWithBlock:^{ self.isTouchEnabled = YES; }];
     
-    self.isTouchEnabled = NO;
     
     [cardTouched runAction:moveAction];
     [cardTouched runAction:rotateAction];
+    [cardTouched runAction:cameraAction];
+    [cardTouched runAction:[CCSequence actions:delay, textureAction, nil]];
     [cardTouched runAction:[CCSequence actions:sizeAction,animationComplete,nil]];
-    [cardTouched runAction:[CCSequence actions:cameraAction,textureAction,nil]];
+}
+
+-(void)checkRingIntact
+{
+    for (int i = 0; i < 360 * 10; i++) {
+        
+        CGFloat angle = 360.0*(CGFloat)i/(CGFloat)(360*10);
+        CGFloat xcoord = RINGSIZE * sinf(angle);
+        CGFloat ycoord = RINGSIZE * cosf(angle);
+        
+        if ([self getCardFromPoint:CGPointMake(xcoord, ycoord)] == NULL) {
+            NSLog(@"Point not in circle");
+            CCTexture2D* tex = [[CCTextureCache sharedTextureCache] addImage:@"break.png"];
+            [centerCard setTexture: tex];
+            ringBroken = YES;
+            return;
+        }
+    }
 }
 
 -(void)ccTouchEnded:(UITouch *)touch withEvent:(UIEvent *)event
@@ -143,7 +172,7 @@
 	CGPoint location = [self convertTouchToNodeSpace: touch];
     
     if (CGRectContainsPoint(settings.boundingBox, location)) {
-        [self addChild:[HelpLayer node]];
+        [self addChild:[HelpLayer scene:self]];
         return;
     }
 
@@ -152,11 +181,11 @@
     // If a card was touched
     if (cardTouched != NULL) {
         // If its the card in the center
-        if ([cardTouched central]) {
-            [self dismissCard:cardTouched];
+        if (cardTouched == centerCard) {
+            [self dismissCenterCard];
         }
         // else if its in the ring and there is no card in the middle
-        else if (!cardInCenter) {
+        else if (centerCard == NULL) {
             [self selectCard:cardTouched];
         }
         
@@ -170,19 +199,22 @@
     int num = (cardNumber.intValue % 13) + 1;
     CCTexture2D* tex = [[CCTextureCache sharedTextureCache] addImage:[NSString stringWithFormat:@"%d.png",num]];
     [centerCard setTexture: tex];
+    
+    if (!ringBroken)
+        [self checkRingIntact];
 }
 
--(void)dismissCard:(Card*)cardTouched
+-(void)dismissCenterCard
 {
-    cardInCenter = NO;
-    [cardSprites removeObject:cardTouched];
+    [cardSprites removeObject:centerCard];
     [cardArray removeObject:cardNumber];    
-    [cardTouched removeFromParentAndCleanup:YES];
+    [centerCard removeFromParentAndCleanup:YES];
+    centerCard = NULL;
 }
 
 -(Card*)getCardFromPoint:(CGPoint)point
 {
-    Card *retCard = NULL;
+    Card* retCard = NULL;
     for (Card *card in cardSprites) {
         if (CGRectContainsPoint(card.boundingBox, point)) {
             retCard = card;
@@ -190,6 +222,18 @@
     }
     
     return retCard;
+}
+
+-(void)resetGame
+{
+    for (Card *card in cardSprites) {
+        [card removeFromParentAndCleanup:YES];
+    }
+    
+    [cardSprites dealloc];
+    [cardArray dealloc];
+    
+    [self createCardArray];
 }
 
 @end

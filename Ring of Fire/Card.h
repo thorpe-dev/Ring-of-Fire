@@ -10,16 +10,5 @@
 #import "cocos2d.h"
 
 @interface Card : CCSprite
-{
-    @private
-    BOOL central;
-    BOOL clicked;
-}
-
--(BOOL)central;
--(void)toggleCentral;
--(BOOL)clicked;
--(void)toggleClicked;
-
 
 @end
