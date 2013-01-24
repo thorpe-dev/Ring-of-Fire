@@ -12,6 +12,7 @@
 
 @interface HelpLayer : CCLayer {
     CCSprite *helpImage;
+    CCMenu *menu;
     GameLayer *gameLayer;
 }
 
