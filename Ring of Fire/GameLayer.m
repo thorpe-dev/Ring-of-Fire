@@ -157,8 +157,8 @@
         CGFloat xcoord = RINGSIZE * sinf(angle);
         CGFloat ycoord = RINGSIZE * cosf(angle);
         
-        if ([self getCardFromPoint:CGPointMake(xcoord, ycoord)] == NULL) {
-            NSLog(@"Point not in circle");
+        if ([self getCardFromPoint:CGPointMake(size.width/2 + xcoord, size.height/2 + ycoord)] == NULL) {
+            NSLog(@"Ring broken!");
             CCTexture2D* tex = [[CCTextureCache sharedTextureCache] addImage:@"break.png"];
             [centerCard setTexture: tex];
             ringBroken = YES;
