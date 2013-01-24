@@ -128,10 +128,13 @@
     id rotateAction = [CCRotateBy actionWithDuration:0.75 angle:-cardTouched.rotation];
     id cameraAction = [CCOrbitCamera actionWithDuration:0.75 radius:1 deltaRadius:0 angleZ:0 deltaAngleZ:360 angleX:0 deltaAngleX:0];
     id textureAction = [CCCallFunc actionWithTarget:self selector:@selector(updateTexture)];
+    CCCallBlock* animationComplete = [CCCallBlock actionWithBlock:^{ self.isTouchEnabled = YES; }];
+    
+    self.isTouchEnabled = NO;
     
     [cardTouched runAction:moveAction];
     [cardTouched runAction:rotateAction];
-    [cardTouched runAction:sizeAction];
+    [cardTouched runAction:[CCSequence actions:sizeAction,animationComplete,nil]];
     [cardTouched runAction:[CCSequence actions:cameraAction,textureAction,nil]];
 }
 
