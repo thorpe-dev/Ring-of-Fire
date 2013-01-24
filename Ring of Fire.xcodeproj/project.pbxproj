@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		7B5750D916B0C6B600C0F8BC /* helvetica-neue-ultralight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7B5750D816B0C6B600C0F8BC /* helvetica-neue-ultralight.ttf */; };
+		7B505FAD16B1DAFA00314EAA /* break.png in Resources */ = {isa = PBXBuildFile; fileRef = 7B505FAC16B1DAFA00314EAA /* break.png */; };
 		7BBAB13E16AE248200D7464E /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7BBAB13D16AE248200D7464E /* QuartzCore.framework */; };
 		7BBAB14016AE248200D7464E /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7BBAB13F16AE248200D7464E /* OpenGLES.framework */; };
 		7BBAB14216AE248200D7464E /* OpenAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7BBAB14116AE248200D7464E /* OpenAL.framework */; };
@@ -139,7 +139,6 @@
 		7BBAB2DD16AF24C000D7464E /* CardBack.png in Resources */ = {isa = PBXBuildFile; fileRef = 7BBAB2DB16AF24C000D7464E /* CardBack.png */; };
 		7BBAB2E116AF295B00D7464E /* Settings.png in Resources */ = {isa = PBXBuildFile; fileRef = 7BBAB2E016AF295B00D7464E /* Settings.png */; };
 		7BBAB2E516AF5D1900D7464E /* Card.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BBAB2E416AF5D1900D7464E /* Card.m */; };
-		7BBAB2E716AF6EFB00D7464E /* Card1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 7BBAB2E616AF6EFB00D7464E /* Card1.jpg */; };
 		7BBAB2EA16B0501D00D7464E /* HelpLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BBAB2E916B0501D00D7464E /* HelpLayer.m */; };
 		7BBAB2F916B0660200D7464E /* 1.png in Resources */ = {isa = PBXBuildFile; fileRef = 7BBAB2EC16B0660200D7464E /* 1.png */; };
 		7BBAB2FA16B0660200D7464E /* 10.png in Resources */ = {isa = PBXBuildFile; fileRef = 7BBAB2ED16B0660200D7464E /* 10.png */; };
@@ -155,10 +154,12 @@
 		7BBAB30416B0660200D7464E /* 8.png in Resources */ = {isa = PBXBuildFile; fileRef = 7BBAB2F716B0660200D7464E /* 8.png */; };
 		7BBAB30516B0660200D7464E /* 9.png in Resources */ = {isa = PBXBuildFile; fileRef = 7BBAB2F816B0660200D7464E /* 9.png */; };
 		7BBAB30716B0689400D7464E /* Default-Landscape~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 7BBAB30616B0689400D7464E /* Default-Landscape~ipad.png */; };
+		7BE7C0CA16B0CF620088FC36 /* Helvetica Neue UltraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7BE7C0C916B0CF620088FC36 /* Helvetica Neue UltraLight.ttf */; };
+		7BE7C0CC16B0D3B30088FC36 /* blank.png in Resources */ = {isa = PBXBuildFile; fileRef = 7BE7C0CB16B0D3B30088FC36 /* blank.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		7B5750D816B0C6B600C0F8BC /* helvetica-neue-ultralight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "helvetica-neue-ultralight.ttf"; path = "Resources/helvetica-neue-ultralight.ttf"; sourceTree = "<group>"; };
+		7B505FAC16B1DAFA00314EAA /* break.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = break.png; path = Resources/break.png; sourceTree = "<group>"; };
 		7BBAB13916AE248200D7464E /* Ring of Fire.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Ring of Fire.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7BBAB13D16AE248200D7464E /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		7BBAB13F16AE248200D7464E /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
@@ -428,7 +429,6 @@
 		7BBAB2E016AF295B00D7464E /* Settings.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Settings.png; path = Resources/Settings.png; sourceTree = "<group>"; };
 		7BBAB2E316AF5D1900D7464E /* Card.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Card.h; sourceTree = "<group>"; };
 		7BBAB2E416AF5D1900D7464E /* Card.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Card.m; sourceTree = "<group>"; };
-		7BBAB2E616AF6EFB00D7464E /* Card1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = Card1.jpg; path = Resources/Card1.jpg; sourceTree = "<group>"; };
 		7BBAB2E816B0501D00D7464E /* HelpLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HelpLayer.h; sourceTree = "<group>"; };
 		7BBAB2E916B0501D00D7464E /* HelpLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HelpLayer.m; sourceTree = "<group>"; };
 		7BBAB2EC16B0660200D7464E /* 1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 1.png; path = Resources/Cards/1.png; sourceTree = "<group>"; };
@@ -445,6 +445,8 @@
 		7BBAB2F716B0660200D7464E /* 8.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 8.png; path = Resources/Cards/8.png; sourceTree = "<group>"; };
 		7BBAB2F816B0660200D7464E /* 9.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 9.png; path = Resources/Cards/9.png; sourceTree = "<group>"; };
 		7BBAB30616B0689400D7464E /* Default-Landscape~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-Landscape~ipad.png"; path = "Resources/Default-Landscape~ipad.png"; sourceTree = "<group>"; };
+		7BE7C0C916B0CF620088FC36 /* Helvetica Neue UltraLight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Helvetica Neue UltraLight.ttf"; path = "Resources/Helvetica Neue UltraLight.ttf"; sourceTree = "<group>"; };
+		7BE7C0CB16B0D3B30088FC36 /* blank.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = blank.png; path = Resources/blank.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -525,7 +527,9 @@
 		7BBAB15016AE248200D7464E /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				7B5750D816B0C6B600C0F8BC /* helvetica-neue-ultralight.ttf */,
+				7B505FAC16B1DAFA00314EAA /* break.png */,
+				7BE7C0CB16B0D3B30088FC36 /* blank.png */,
+				7BE7C0C916B0CF620088FC36 /* Helvetica Neue UltraLight.ttf */,
 				7BBAB30616B0689400D7464E /* Default-Landscape~ipad.png */,
 				7BBAB2EC16B0660200D7464E /* 1.png */,
 				7BBAB2ED16B0660200D7464E /* 10.png */,
@@ -540,7 +544,6 @@
 				7BBAB2F616B0660200D7464E /* 7.png */,
 				7BBAB2F716B0660200D7464E /* 8.png */,
 				7BBAB2F816B0660200D7464E /* 9.png */,
-				7BBAB2E616AF6EFB00D7464E /* Card1.jpg */,
 				7BBAB2E016AF295B00D7464E /* Settings.png */,
 				7BBAB2DA16AF24C000D7464E /* Logo.png */,
 				7BBAB2DB16AF24C000D7464E /* CardBack.png */,
@@ -970,7 +973,6 @@
 				7BBAB2DC16AF24C000D7464E /* Logo.png in Resources */,
 				7BBAB2DD16AF24C000D7464E /* CardBack.png in Resources */,
 				7BBAB2E116AF295B00D7464E /* Settings.png in Resources */,
-				7BBAB2E716AF6EFB00D7464E /* Card1.jpg in Resources */,
 				7BBAB2F916B0660200D7464E /* 1.png in Resources */,
 				7BBAB2FA16B0660200D7464E /* 10.png in Resources */,
 				7BBAB2FB16B0660200D7464E /* 11.png in Resources */,
@@ -985,7 +987,9 @@
 				7BBAB30416B0660200D7464E /* 8.png in Resources */,
 				7BBAB30516B0660200D7464E /* 9.png in Resources */,
 				7BBAB30716B0689400D7464E /* Default-Landscape~ipad.png in Resources */,
-				7B5750D916B0C6B600C0F8BC /* helvetica-neue-ultralight.ttf in Resources */,
+				7BE7C0CA16B0CF620088FC36 /* Helvetica Neue UltraLight.ttf in Resources */,
+				7BE7C0CC16B0D3B30088FC36 /* blank.png in Resources */,
+				7B505FAD16B1DAFA00314EAA /* break.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
