@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7B5750D916B0C6B600C0F8BC /* helvetica-neue-ultralight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7B5750D816B0C6B600C0F8BC /* helvetica-neue-ultralight.ttf */; };
 		7BBAB13E16AE248200D7464E /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7BBAB13D16AE248200D7464E /* QuartzCore.framework */; };
 		7BBAB14016AE248200D7464E /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7BBAB13F16AE248200D7464E /* OpenGLES.framework */; };
 		7BBAB14216AE248200D7464E /* OpenAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7BBAB14116AE248200D7464E /* OpenAL.framework */; };
@@ -157,6 +158,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7B5750D816B0C6B600C0F8BC /* helvetica-neue-ultralight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "helvetica-neue-ultralight.ttf"; path = "Resources/helvetica-neue-ultralight.ttf"; sourceTree = "<group>"; };
 		7BBAB13916AE248200D7464E /* Ring of Fire.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Ring of Fire.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7BBAB13D16AE248200D7464E /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		7BBAB13F16AE248200D7464E /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
@@ -523,6 +525,7 @@
 		7BBAB15016AE248200D7464E /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				7B5750D816B0C6B600C0F8BC /* helvetica-neue-ultralight.ttf */,
 				7BBAB30616B0689400D7464E /* Default-Landscape~ipad.png */,
 				7BBAB2EC16B0660200D7464E /* 1.png */,
 				7BBAB2ED16B0660200D7464E /* 10.png */,
@@ -982,6 +985,7 @@
 				7BBAB30416B0660200D7464E /* 8.png in Resources */,
 				7BBAB30516B0660200D7464E /* 9.png in Resources */,
 				7BBAB30716B0689400D7464E /* Default-Landscape~ipad.png in Resources */,
+				7B5750D916B0C6B600C0F8BC /* helvetica-neue-ultralight.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
