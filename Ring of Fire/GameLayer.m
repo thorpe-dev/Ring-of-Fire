@@ -188,9 +188,18 @@
         else if (centerCard == NULL) {
             [self selectCard:cardTouched];
         }
-        
-        // Do nothing
+        else {
+            [self flashCenterCard];
+        }
     }
+}
+
+-(void)flashCenterCard
+{
+    id popUp = [CCScaleTo actionWithDuration:0.1 scale:1.1];
+    id popBack = [CCScaleTo actionWithDuration:0.1 scale:0.9];
+    id popRestore = [CCScaleTo actionWithDuration:0.1 scale:1];
+    [centerCard runAction:[CCSequence actions:popUp, popBack, popRestore, nil]];
 }
 
 -(void)updateTexture
