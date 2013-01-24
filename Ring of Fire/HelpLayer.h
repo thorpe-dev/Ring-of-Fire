@@ -7,12 +7,14 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "GameLayer.h"
 #import "cocos2d.h"
 
 @interface HelpLayer : CCLayer {
     CCSprite *helpImage;
+    GameLayer *gameLayer;
 }
 
-+(CCScene *) scene;
++(CCScene *)scene:(GameLayer*)game;
 
 @end
