@@ -47,7 +47,7 @@
         size = [[CCDirector sharedDirector] winSize];        
         settings = [CCSprite spriteWithFile:@"Settings.png"];
         settings.position = ccp(size.width*0.95,size.height*0.075);
-        [settings setScale:0.3];
+        [settings setScale:0.3*SCALE];
         
         [self addChild:settings];
 
@@ -100,7 +100,7 @@
     
     card.position = ccp(size.width/2 + xcoord, size.height/2 + ycoord);
 
-    [card setScale:0.3];
+    [card setScale:0.3*SCALE];
     [card setRotation:rotation];
     [self addChild:card];
     return card;
@@ -129,7 +129,7 @@
     // Move into the center
     id moveAction = [CCMoveTo actionWithDuration:0.75 position:ccp(size.width/2, size.height/2)];
     // Make twice as large
-    id sizeAction = [CCScaleTo actionWithDuration:0.75 scale:1];
+    id sizeAction = [CCScaleTo actionWithDuration:0.75 scale:1*SCALE];
     // Reset rotation, in 0.2 seconds
     // Makes it look a lot less weird than in sync with the rest
     id rotateAction = [CCRotateBy actionWithDuration:0.2 angle:-cardTouched.rotation];
@@ -196,9 +196,9 @@
 
 -(void)flashCenterCard
 {
-    id popUp = [CCScaleTo actionWithDuration:0.1 scale:1.1];
-    id popBack = [CCScaleTo actionWithDuration:0.1 scale:0.9];
-    id popRestore = [CCScaleTo actionWithDuration:0.1 scale:1];
+    id popUp = [CCScaleTo actionWithDuration:0.1 scale:1.1*SCALE];
+    id popBack = [CCScaleTo actionWithDuration:0.1 scale:0.9*SCALE];
+    id popRestore = [CCScaleTo actionWithDuration:0.1 scale:1*SCALE];
     [centerCard runAction:[CCSequence actions:popUp, popBack, popRestore, nil]];
 }
 

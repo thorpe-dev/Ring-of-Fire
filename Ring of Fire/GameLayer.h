@@ -12,6 +12,8 @@
 #import "cocos2d.h"
 #import "Card.h"
 
+#define SCALE ((([[CCDirector sharedDirector] enableRetinaDisplay:YES]) ? 1 : 0.5))
+
 @interface GameLayer : CCLayer
 {
     CCSprite *settings;

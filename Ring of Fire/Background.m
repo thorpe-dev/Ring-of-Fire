@@ -37,6 +37,7 @@
         CCSprite *bg = [CCSprite spriteWithFile:@"Background.png"];
         bg.tag = 1;
         bg.anchorPoint = CGPointMake(0, 0);
+        [bg setScale:SCALE];
         [self addChild:bg];
         
         // create and initialize a Label
@@ -47,7 +48,7 @@
         
 		// position the label on the center of the screen
 		label.position =  ccp(size.width/2 , size.height/2);
-        [label setScale: 0.2];
+        [label setScale: 0.2*SCALE];
         
         [self addChild:label];
         [self addChild:[GameLayer node]];
@@ -55,7 +56,6 @@
     }
     
     return self;
-    
 }
 
 

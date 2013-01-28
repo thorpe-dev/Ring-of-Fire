@@ -59,7 +59,7 @@
         
         helpImage = [CCSprite spriteWithFile:@"blank.png"];
         helpImage.position = ccp(size.width/2,size.height/2);
-        helpImage.scale = 1;
+        helpImage.scale = SCALE;
         
         [self addChild:helpImage];
         [self reorderChild:helpImage z:NSIntegerMin];
